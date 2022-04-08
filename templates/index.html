@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .box1{
+            background-color: {{color1}};
+            height: 20px;
+            width: 20px;
+            display: grid;
+        }
+        .box2{
+            background-color: {{color2}};
+            height: 20px;
+            width: 20px;
+            display: grid;
+        }
+        tr{
+            display: flex;
+        }
+    </style>
+    <title>Checkerboard</title>
+</head>
+<body>
+    <table>
+        {% for i in range(numy) %}
+        <tr>
+            {% for j in range(numx): %}
+            <td class="box{{(i+j)%2+1}}"></td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
